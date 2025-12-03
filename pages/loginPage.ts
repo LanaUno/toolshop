@@ -10,7 +10,7 @@ export class LoginPage extends BasePage {
         super(page);
 
         this.signInLink = page.locator('[data-test="nav-sign-in"]');
-        this.loginModal = page.locator('[class="col-lg-6 auth-form"]');
+        this.loginModal = page.locator('.col-lg-6.auth-form');
         this.registerLink = page.locator('[data-test="register-link"]');
     }
 
