@@ -12,11 +12,11 @@ test.describe("Register new user", async () => {
         await expect(loginPage.loginModal).toBeVisible();
         await loginPage.clickRegisterLink();
     });
-    test("C001 Register/login user", async ({ registerPage }) => {
+    test("C001 Register/login user", async ({ registerPage, loginPage }) => {
         newUser = generateUser(registerPage);
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
-        await expect(registerPage.loginForm).toBeVisible();
+        await expect(loginPage.loginModal).toBeVisible();
         await registerPage.fillEmail(data.testData.email);
         await registerPage.fillPassword(data.password);
         await registerPage.clickLoginButton();
@@ -103,7 +103,7 @@ test.describe("Register new user", async () => {
         newUser = generateUser({});
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
-        await expect(registerPage.loginForm).toBeVisible();
+        await expect(loginPage.loginModal).toBeVisible();
         await registerPage.fillEmail(data.testData.email);
         await registerPage.fillPassword(data.password);
         await registerPage.clickLoginButton();
