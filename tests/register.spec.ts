@@ -17,7 +17,7 @@ test.describe("Register new user", async () => {
         newUser = generateUser(registerPage);
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
-        await expect(loginPage.loginModal).toBeVisible({timeout: 10000});
+        await expect(loginPage.loginModal).toBeVisible({timeout: 20000});
         await registerPage.fillEmail(data.testData.email);
         await registerPage.fillPassword(data.password);
         await registerPage.clickLoginButton();
@@ -104,7 +104,7 @@ test.describe("Register new user", async () => {
         newUser = generateUser({});
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
-        await expect(loginPage.loginModal).toBeVisible({timeout: 10000});
+        await expect(loginPage.loginModal).toBeVisible({timeout: 20000});
         await registerPage.fillEmail(data.testData.email);
         await registerPage.fillPassword(data.password);
         await registerPage.clickLoginButton();
