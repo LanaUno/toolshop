@@ -6,7 +6,8 @@ import { test } from "../utils/fixtures";
 let newUser: any;
 
 test.describe("Register new user", async () => {
-    test.beforeEach(async ({ loginPage, basePage }) => {
+    test.beforeEach(async ({ loginPage, basePage, page }) => {
+        await page.setViewportSize({ width: 1536, height: 980 });
         await basePage.goto("/");
         await loginPage.clickSignInLink();
         await expect(loginPage.loginModal).toBeVisible();
