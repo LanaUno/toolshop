@@ -13,7 +13,8 @@ test.describe("Register new user", async () => {
         await expect(loginPage.loginModal).toBeVisible();
         await loginPage.clickRegisterLink();
     });
-    test("C001 Register/login user", async ({ registerPage, loginPage, basePage }) => {
+    // This test is skipped due to Cloudflare check if the user is human
+    test.skip("C001 Register/login user", async ({ registerPage, loginPage, basePage }) => {
         newUser = generateUser(registerPage);
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
@@ -100,7 +101,8 @@ test.describe("Register new user", async () => {
         await expect(registerPage.passwordErrMsg).toHaveText(data.texts.requiredPassword);
         await expect(registerPage.password).toHaveCSS("border-color", data.color.error);
     });
-    test("C004 Registration with already registered email", async ({ registerPage, loginPage }) => {
+    // This test is skipped due to Cloudflare check if the user is human
+    test.skip("C004 Registration with already registered email", async ({ registerPage, loginPage }) => {
         newUser = generateUser({});
         await registerPage.fillRegisterForm(newUser);
         await registerPage.clickRegisterButton();
