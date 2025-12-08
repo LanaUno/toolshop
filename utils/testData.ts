@@ -41,7 +41,7 @@ export const texts = {
     requiredEmail: /Email is required/,
     requiredPassword: /Password is required/,
     existingEmail: /A customer with this email address already exists./,
-    invalidCharacters: /Password can not include invalid characters./,
+    invalidCharacters: /[/Password/ && /include invalid characters./]/,
     notLess8Characters: /Password must be minimal /,
     mustBeSymbol: / Have at least one special symbol /,
     containUpperAndLowerCase: / Contain both uppercase and lowercase letters/,
